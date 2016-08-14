@@ -33,16 +33,4 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update micropost" do
-    patch micropost_url(@micropost), params: { micropost: { content: @micropost.content, user_id: @micropost.user_id } }
-    assert_redirected_to micropost_url(@micropost)
-  end
-
-  test "should destroy micropost" do
-    assert_difference('Micropost.count', -1) do
-      delete micropost_url(@micropost)
-    end
-
-    assert_redirected_to microposts_url
-  end
 end
